@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HPOMRS — High Performance Offline Music Retrieval System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-icon">◈</span>
+      <div class="nav-title-group">
+        <span class="nav-title">HPOMRS</span>
+        <span class="nav-subtitle">High Performance Offline Music Retrieval System</span>
+      </div>
+    </div>
+    <button id="themeToggle" class="theme-btn" title="Toggle light/dark mode">
+      <span id="themeIcon">☀</span>
+      <span id="themeLabel">Light Mode</span>
+    </button>
+  </nav>
+
+
+  <main class="main-content">
+
+    
+    <section class="card playlist-panel" aria-label="Playlist Panel">
+      <div class="card-header">
+        <h2 class="card-title">Playlist</h2>
+        <span class="song-count" id="songCount">0 tracks</span>
+      </div>
+
+      
+      <label class="add-btn" for="fileInput" title="Add local audio files">
+        <span class="add-icon">+</span>
+        Add Songs
+      </label>
+      
+      <input type="file" id="fileInput" accept="audio/*" multiple hidden />
+
+      
+      <div class="song-list-wrapper">
+        <ul class="song-list" id="songList">
+      
+          <li class="empty-state" id="emptyState">
+            <span class="empty-icon">♪</span>
+            <p>No songs added yet.</p>
+            <p>Click "Add Songs" to get started.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+   
+    <section class="card player-panel" aria-label="Music Player">
+      <div class="card-header">
+        <h2 class="card-title">Now Playing</h2>
+      </div>
+
+      <div class="cover-art" id="coverArt">
+        <div class="cover-icon">♫</div>
+      </div>
+
+      
+      <div class="song-info">
+        <p class="song-name" id="songName">No track selected</p>
+        <p class="song-artist" id="songArtist">—</p>
+      </div>
+
+      
+      <audio id="audioPlayer"></audio>
+
+      
+      <div class="slider-group">
+        <span class="time-label" id="currentTime">0:00</span>
+        <input
+          type="range"
+          id="seekSlider"
+          class="slider seek-slider"
+          min="0"
+          max="100"
+          value="0"
+          aria-label="Seek"
+        />
+        <span class="time-label" id="duration">0:00</span>
+      </div>
+
+      
+      <div class="controls">
+        <button class="ctrl-btn" id="prevBtn" title="Previous" aria-label="Previous">
+          ⏮
+        </button>
+        <button class="ctrl-btn play-btn" id="playPauseBtn" title="Play / Pause" aria-label="Play">
+          ▶
+        </button>
+        <button class="ctrl-btn" id="nextBtn" title="Next" aria-label="Next">
+          ⏭
+        </button>
+      </div>
+
+            <div class="volume-group">
+        <span class="volume-icon" id="volumeIcon">🔊</span>
+        <input
+          type="range"
+          id="volumeSlider"
+          class="slider volume-slider"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.8"
+          aria-label="Volume"
+        />
+        <span class="volume-label" id="volumeLabel">80%</span>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer class="footer">
+    <p>HPOMRS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
